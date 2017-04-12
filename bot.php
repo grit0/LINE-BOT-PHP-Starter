@@ -27,8 +27,9 @@ if (!is_null($events['events'])) {
 				// $rand=2;
 				$select=$pieces[$rand];
 				$select=str_replace("เถรี","",$select);
-				$select=substr($select,139);
-				$messages = ['type' => 'text','text' => $select];
+				$select=substr($select,19);
+				$from="\n ｡◕‿◕｡==>".substr(strip_tags($pieces[1]),24);
+				$messages = ['type' => 'text','text' => $select.$from];
 			}
 			else{
 			$messages = [

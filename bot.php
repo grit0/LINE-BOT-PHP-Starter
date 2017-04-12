@@ -21,9 +21,9 @@ if (!is_null($events['events'])) {
 				$messages = ['type' => 'text','text' => "สวัสดีดีครัซ.."];
 			else if($text=="t"){
 				$page=[['353', '404', '407', '434', '559', '673', '805', '990', '1041', '1180', '1284', '1389', '1482', '1582', '1656', '1741', '1803', '1900', '1954', '2023', '2109', '2173', '2250', '2314', '2399', '2447', '2524'],['2580', '2603', '2637', '2727', '2786', '2833', '2894', '2938', '2996', '3088', '3131', '3194', '3237', '3285', '3311', '3340', '3368', '3398', '3463', '3509', '3570', '3589', '3612', '3634', '3659', '3692', '3707', '3713', '3754', '3787', '3835', '3864', '3877', '3897', '3920', '3952', '3967', '3991', '4010', '4024', '4046', '4055', '4079', '4101', '4133', '4180', '4240', '4267', '4305', '4350', '4381', '4398', '4406', '4433', '4469', '4502', '4538', '4586', '4631', '4693', '4768', '4800', '4829', '4887', '4958', '4990', '5025', '5063', '5147', '5185', '5232', '5289', '5319'],['5360', '5399', '5466']];
-				$ranPageGroup = rand(0,2)
-				$ranPage = rand(0,count($page[$ranPageGroup])-1)
-				$url = 'http://www.watthakhanun.com/webboard/archive/index.php/t-'.$page[$ranPageGroup][$ranPage] .'.html';
+				$ranPageGroup = rand(0,2);
+				$ranPage = rand(0,count($page[$ranPageGroup])-1);
+				$url = 'http://www.watthakhanun.com/webboard/archive/index.php/t-'.$page[$ranPageGroup][$ranPage].'.html';
 				$output =iconv("tis-620", "utf-8",file_get_contents($url)); 
 				$pieces = explode("<hr />", $output);
 				$rand=rand(2,count($pieces)-2);
@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 				$select=str_replace("เถรี","",$select);
 				$select=substr($select,20);
 				$from="\n ｡◕‿◕｡==>".substr(strip_tags($pieces[1]),24);
-				$messages = ['type' => 'text','text' => $page];
+				$messages = ['type' => 'text','text' => $select.$from];
 			}
 			else{
 			$messages = [

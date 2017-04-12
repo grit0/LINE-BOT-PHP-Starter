@@ -30,6 +30,7 @@ if (!is_null($events['events'])) {
 				// $rand=2;
 				$select=strip_tags($pieces[$rand]);
 				$select=str_replace("เถรี","",$select);
+				$select=str_replace("&quot;","",$select);
 				$select=substr($select,20);
 				$from="\n ｡◕‿◕｡==>".substr(strip_tags($pieces[1]),24);
 				$messages = ['type' => 'text','text' => $select.$from];

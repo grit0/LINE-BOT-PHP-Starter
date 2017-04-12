@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 				$select=str_replace("เถรี","",$select);
 				$select=substr($select,20);
 				$from="\n ｡◕‿◕｡==>".substr(strip_tags($pieces[1]),24);
-				$messages = ['type' => 'text','text' => $select.$from];
+				$messages = ['type' => 'text','text' => $page];
 			}
 			else{
 			$messages = [

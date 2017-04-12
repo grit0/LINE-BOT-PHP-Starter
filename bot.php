@@ -19,6 +19,17 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			if($text=="ดีจ้า")
 				$messages = ['type' => 'text','text' => "สวัสดีดีครัซ.."];
+			else if($text=="t"){
+				$url = 'http://www.watthakhanun.com/webboard/archive/index.php/t-407.html';
+				$output =iconv("tis-620", "utf-8",file_get_contents($url)); 
+				$pieces = explode("<hr />", $output);
+				$rand=rand(2,count($pieces)-2);
+				// $rand=2;
+				$select=$pieces[$rand];
+				$select=str_replace("เถรี","",$select);
+				$select=substr($select,139);
+				$messages = ['type' => 'text','text' => $select];
+			}
 			else{
 			$messages = [
 				'type' => 'text',

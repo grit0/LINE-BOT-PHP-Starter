@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 				$pieces = explode("<hr />", $output);
 				$rand=rand(2,count($pieces)-2);
 				// $rand=2;
-				$select=substr($pieces[$rand]);
+				$select=strip_tags($pieces[$rand]);
 				$select=str_replace("เถรี","",$select);
 				$select=substr($select,19);
 				$from="\n ｡◕‿◕｡==>".substr(strip_tags($pieces[1]),24);
